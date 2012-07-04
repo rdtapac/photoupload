@@ -2282,3 +2282,18 @@
 --
 #0 C:\xampp\htdocs\photoupload\index.php(109): Kohana_Request->execute()
 #1 {main}
+2012-07-03 21:44:29 --- ERROR: ErrorException [ 8 ]: Undefined variable: array_details ~ APPPATH\classes\controller\main.php [ 77 ]
+2012-07-03 21:44:29 --- STRACE: ErrorException [ 8 ]: Undefined variable: array_details ~ APPPATH\classes\controller\main.php [ 77 ]
+--
+#0 C:\xampp\htdocs\photoupload\application\classes\controller\main.php(77): Kohana_Core::error_handler(8, 'Undefined varia...', 'C:\xampp\htdocs...', 77, Array)
+#1 [internal function]: Controller_Main->action_upload()
+#2 C:\xampp\htdocs\photoupload\system\classes\kohana\request\client\internal.php(118): ReflectionMethod->invoke(Object(Controller_Main))
+#3 C:\xampp\htdocs\photoupload\system\classes\kohana\request\client.php(64): Kohana_Request_Client_Internal->execute_request(Object(Request))
+#4 C:\xampp\htdocs\photoupload\system\classes\kohana\request.php(1138): Kohana_Request_Client->execute(Object(Request))
+#5 C:\xampp\htdocs\photoupload\index.php(109): Kohana_Request->execute()
+#6 {main}
+2012-07-03 21:45:54 --- ERROR: ErrorException [ 4 ]: syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' ~ APPPATH\classes\controller\main.php [ 75 ]
+2012-07-03 21:45:54 --- STRACE: ErrorException [ 4 ]: syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' ~ APPPATH\classes\controller\main.php [ 75 ]
+--
+#0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main}

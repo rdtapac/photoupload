@@ -69,18 +69,13 @@
 			$object_image->resize( 500 )->save();
 
 			//save image details to database
-			$array_image_maindata = array( 'image' => $string_filename );
-			$array_image_subdata = array(
-												'image_width' => $object_image->width,
-												'image_height' => $object_image->height
+			$array_image_maindata = array( 	'image' 	=> $string_filename,
+											'width' 	=> $object_image->width,
+											'height' 	=> $object_image->height,
+											'ext'		=> $string_extension
 										);
 
-			$array_details = array(
-									'image_maindata' => $array_image_maindata,
-									'image_subdata' => $array_image_subdata
-								);
-
-			$this->_save_image_data( $array_details, 1 );
+			$this->_save_image_data( $array_image_maindata, 1 );
 
 			$this->request->redirect( 'main/index' );
 
@@ -95,7 +90,7 @@
 		{
 
 			$new_image = ORM::factory( 'image', $integer_key );
-			$new_image->values( $array_image_data['image_maindata'] )->save();
+			$new_image->values( $array_image_data )->save();
 
 		}
 
